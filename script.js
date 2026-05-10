@@ -74,11 +74,15 @@ const QUIZ = [
     ]
   },
   {
-    q: 'En una salida familiar, el “kit de mamá” incluye:',
+    q: '¿Qué hay dentro de la cartera de la Meme?',
     a: [
-      { t: 'Paracetamol + parche curita + snack (obvio).', s: 2 },
-      { t: 'Un suéter extra… para alguien que “no lo iba a necesitar”.', s: 2 },
-      { t: 'Agua y una mirada que dice “yo sabía”.', s: 1 },
+      { t: 'Chocolates.', s: 0 },
+      { t: 'Pasta de dientes.', s: 0 },
+      { t: 'Abanico.', s: 0 },
+      { t: 'Pilas.', s: 0 },
+      { t: 'Esponja.', s: 0 },
+      { t: 'Aceite.', s: 0 },
+      { t: 'Todas las anteriores.', s: 2 },
     ]
   },
   {
