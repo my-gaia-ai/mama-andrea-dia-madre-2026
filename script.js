@@ -56,11 +56,12 @@ const QUIZ = [
     ]
   },
   {
-    q: 'Alguien dice: “Me duele la guata”. Tú…',
+    q: '¿Qué mes está de cumpleaños la Meme?',
     a: [
-      { t: 'Apareces con té y una mantita en 7 segundos.', s: 2 },
-      { t: 'Dices “¿qué comiste?” con cara de detective.', s: 2 },
-      { t: 'Sugieres “respira… ya va a pasar” (y pasa).', s: 1 },
+      { t: 'En abril.', s: 0 },
+      { t: 'En mayo.', s: 0 },
+      { t: 'Depende a quién le preguntes.', s: 2 },
+      { t: 'Ninguno de los dos.', s: 0 },
     ]
   },
   {
