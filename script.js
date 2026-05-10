@@ -41,6 +41,21 @@ const MOM_QUOTES = [
 
 const QUIZ = [
   {
+    q: '¿Mamá ha comprado alguna vez algo de esos comerciales de “¡llame ya!”?',
+    a: [
+      {
+        html: 'Sí: el <a href="https://www.youtube.com/watch?v=4q7GCuWFsSs" target="_blank" rel="noopener noreferrer">Ginsu 2000</a> (el cuchillo).',
+        s: 2
+      },
+      {
+        html: 'Sí: la <a href="https://www.youtube.com/watch?v=qbDQkt64NQs" target="_blank" rel="noopener noreferrer">Máquina del Lenguaje</a>.',
+        s: 2
+      },
+      { t: 'Sí: todas las anteriores.', s: 1 },
+      { t: 'Por supuesto que no. Ni una.', s: 0 },
+    ]
+  },
+  {
     q: 'Alguien dice: “Me duele la guata”. Tú…',
     a: [
       { t: 'Apareces con té y una mantita en 7 segundos.', s: 2 },
@@ -164,7 +179,11 @@ function renderQuiz(){
       input.id = id;
 
       const span = document.createElement('span');
-      span.textContent = opt.t;
+      if(opt.html){
+        span.innerHTML = opt.html;
+      } else {
+        span.textContent = opt.t;
+      }
 
       label.appendChild(input);
       label.appendChild(span);
@@ -194,9 +213,10 @@ function quizScore(){
 function quizResultText(score, answered, total){
   if(answered < total) return `Te faltan ${total-answered} preguntas 😌 (igual te queremos).`;
 
-  // score range: min 5, max 10
-  if(score >= 9) return 'Resultado: Mamá Andrea nivel DIOS. (Abrazo + snack + solución incluida).';
-  if(score >= 7) return 'Resultado: Mamá Andrea modo PRO. (Detectas todo y encima con ternura).';
+  // Adaptativo al número de preguntas (máximo típico: 2 puntos por pregunta)
+  const maxScore = total * 2;
+  if(score >= Math.ceil(maxScore * 0.85)) return 'Resultado: Mamá Andrea nivel DIOS. (Abrazo + snack + solución incluida).';
+  if(score >= Math.ceil(maxScore * 0.70)) return 'Resultado: Mamá Andrea modo PRO. (Detectas todo y encima con ternura).';
   return 'Resultado: Mamá Andrea en entrenamiento… pero con corazón gigante.';
 }
 
