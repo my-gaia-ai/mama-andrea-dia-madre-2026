@@ -45,11 +45,11 @@ const QUIZ = [
     a: [
       {
         html: 'Sí: el <a href="https://www.youtube.com/watch?v=4q7GCuWFsSs" target="_blank" rel="noopener noreferrer">Ginsu 2000</a> (el cuchillo).',
-        s: 2
+        s: 0
       },
       {
         html: 'Sí: la <a href="https://www.youtube.com/watch?v=qbDQkt64NQs" target="_blank" rel="noopener noreferrer">Máquina del Lenguaje</a>.',
-        s: 2
+        s: 0
       },
       { t: 'Sí: todas las anteriores.', s: 1 },
       { t: 'Por supuesto que no. Ni una.', s: 0 },
@@ -60,7 +60,7 @@ const QUIZ = [
     a: [
       { t: 'En abril.', s: 0 },
       { t: 'En mayo.', s: 0 },
-      { t: 'Depende a quién le preguntes.', s: 2 },
+      { t: 'Depende a quién le preguntes.', s: 1 },
       { t: 'Ninguno de los dos.', s: 0 },
     ]
   },
@@ -70,7 +70,7 @@ const QUIZ = [
       { t: 'Perro.', s: 0 },
       { t: 'Gato.', s: 0 },
       { t: 'Caballo.', s: 0 },
-      { t: 'Nietos.', s: 2 },
+      { t: 'Nietos.', s: 1 },
     ]
   },
   {
@@ -82,7 +82,7 @@ const QUIZ = [
       { t: 'Pilas.', s: 0 },
       { t: 'Esponja.', s: 0 },
       { t: 'Aceite.', s: 0 },
-      { t: 'Todas las anteriores.', s: 2 },
+      { t: 'Todas las anteriores.', s: 1 },
     ]
   },
   {
@@ -91,7 +91,7 @@ const QUIZ = [
       { t: 'Las hizo ver una película de terror.', s: 0 },
       { t: 'Se disfrazó de payaso y las despertó a las 3am.', s: 0 },
       { t: 'Las hizo dormir solas en la casita del árbol.', s: 0 },
-      { t: 'Mandó al Tata al entretecho para asustarlas.', s: 2 },
+      { t: 'Mandó al Tata al entretecho para asustarlas.', s: 1 },
     ]
   },
 ];
@@ -212,11 +212,15 @@ function quizScore(){
 function quizResultText(score, answered, total){
   if(answered < total) return `Te faltan ${total-answered} preguntas 😌 (igual te queremos).`;
 
-  // Adaptativo al número de preguntas (máximo típico: 2 puntos por pregunta)
-  const maxScore = total * 2;
-  if(score >= Math.ceil(maxScore * 0.85)) return 'Resultado: Mamá Andrea nivel DIOS. (Abrazo + snack + solución incluida).';
-  if(score >= Math.ceil(maxScore * 0.70)) return 'Resultado: Mamá Andrea modo PRO. (Detectas todo y encima con ternura).';
-  return 'Resultado: Mamá Andrea en entrenamiento… pero con corazón gigante.';
+  // score = # de respuestas correctas (0..total)
+  const n = score;
+
+  if(n === 0) return `0/${total}: Cero puntos… pero igual te queremos 😌`;
+  if(n === 1) return `1/${total}: Bien. Al menos no fue 0 😉`;
+  if(n === 2) return `2/${total}: Vas calentando. La Meme aprueba “a medias”.`;
+  if(n === 3) return `3/${total}: Ya te las sabes. O te las contaron.`;
+  if(n === 4) return `4/${total}: Nivel experto/a. Respeto.`;
+  return `5/${total}: Máximo puntaje. Memeólogo/a certificado/a 🏆`;
 }
 
 function resetQuiz(){
