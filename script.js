@@ -94,14 +94,6 @@ const QUIZ = [
       { t: 'Mandó al Tata al entretecho para asustarlas.', s: 2 },
     ]
   },
-  {
-    q: 'Nivel de “meme” en el chat familiar:',
-    a: [
-      { t: 'Stickers tiernos que aparecen en el momento perfecto.', s: 2 },
-      { t: 'Reacción con corazón a TODO. Todo.', s: 1 },
-      { t: 'Un mensaje serio… seguido de un emoji inesperado.', s: 1 },
-    ]
-  },
 ];
 
 function setToday() {
