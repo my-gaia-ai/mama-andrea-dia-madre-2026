@@ -1,12 +1,24 @@
-// Página Día de la Madre — Mamá Andrea (MVP)
+// Página Día de la Madre — Mamá Andrea
 
-const PHOTOS = [
-  // Cuando tengas fotos: ponlas en assets/ y descomenta estas líneas
-  // { selector: '#heroPhoto', src: 'assets/foto-portada.jpg', alt: 'Mamá Andrea' },
-  // { selector: '#gallery', slot: 0, src: 'assets/foto1.jpg', alt: 'Foto 1' },
-  // { selector: '#gallery', slot: 1, src: 'assets/foto2.jpg', alt: 'Foto 2' },
-  // { selector: '#gallery', slot: 2, src: 'assets/foto3.jpg', alt: 'Foto 3' },
-  // { selector: '#gallery', slot: 3, src: 'assets/foto4.jpg', alt: 'Foto 4' },
+// Config de fotos (edita libremente)
+const HERO_PHOTO = {
+  src: 'assets/foto19.jpg',
+  alt: 'Mamá Andrea',
+};
+
+const GALLERY_PHOTOS = [
+  { src: 'assets/foto18.jpg', alt: 'Mamá Andrea', caption: 'Brazos que arreglan el mundo.' },
+  { src: 'assets/foto06.jpg', alt: 'Mamá Andrea', caption: 'Tu sonrisa: terapia familiar.' },
+  { src: 'assets/foto11.jpg', alt: 'Mamá Andrea', caption: 'Reina del caos (con amor).' },
+  { src: 'assets/foto15.jpg', alt: 'Mamá Andrea', caption: 'Tres generaciones, un mismo abrazo.' },
+  { src: 'assets/foto23.jpg', alt: 'Familia', caption: 'Equipo completo, capitana: Mamá.' },
+  { src: 'assets/foto21.jpg', alt: 'Familia', caption: 'Abrazo que reinicia el corazón.' },
+  { src: 'assets/foto22.jpg', alt: 'Familia', caption: 'Siempre en primera fila por nosotros.' },
+  { src: 'assets/foto25.jpg', alt: 'Familia', caption: 'Mamá también sabe pasarlo bien.' },
+  { src: 'assets/foto04.jpg', alt: 'Mamá Andrea', caption: 'Elegancia + ternura = tú.' },
+  { src: 'assets/foto08.jpg', alt: 'Mamá Andrea', caption: 'Clásico: Andrea siendo Andrea.' },
+  { src: 'assets/foto05.jpg', alt: 'Mamá Andrea', caption: 'Sonrisa lista para cualquier plan.' },
+  { src: 'assets/foto01.jpg', alt: 'Familia', caption: 'Celebrar contigo es el mejor plan.' },
 ];
 
 const COMPLIMENTS = [
@@ -194,25 +206,27 @@ function resetQuiz(){
 }
 
 function applyPhotos(){
-  // hero photo
-  PHOTOS.forEach(p => {
-    if(p.selector === '#heroPhoto' && p.src){
-      const el = document.querySelector('#heroPhoto');
-      el.classList.remove('ph');
-      el.innerHTML = `<img src="${p.src}" alt="${p.alt||''}" />`;
-      el.querySelector('img').style.width = '100%';
-      el.querySelector('img').style.height = '100%';
-      el.querySelector('img').style.objectFit = 'cover';
-    }
-    if(p.selector === '#gallery' && typeof p.slot === 'number'){
-      const tiles = document.querySelectorAll('#gallery .tile');
-      const tile = tiles[p.slot];
-      if(tile && p.src){
-        tile.classList.remove('ph');
-        tile.innerHTML = `<img src="${p.src}" alt="${p.alt||''}" />`;
-      }
-    }
-  });
+  // hero
+  const hero = document.querySelector('#heroPhoto');
+  if(hero && HERO_PHOTO?.src){
+    hero.classList.remove('ph');
+    hero.innerHTML = `<img src="${HERO_PHOTO.src}" alt="${HERO_PHOTO.alt||''}" />`;
+  }
+
+  // gallery
+  const g = document.querySelector('#gallery');
+  if(g){
+    g.innerHTML = '';
+    GALLERY_PHOTOS.forEach((p, idx) => {
+      const fig = document.createElement('figure');
+      fig.className = 'tile';
+      fig.innerHTML = `
+        <img loading="lazy" src="${p.src}" alt="${p.alt||''}" />
+        <figcaption><strong>Foto ${idx+1}.</strong> ${p.caption||''}</figcaption>
+      `.trim();
+      g.appendChild(fig);
+    });
+  }
 }
 
 // Wire
