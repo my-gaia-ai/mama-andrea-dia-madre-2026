@@ -90,8 +90,8 @@ const QUIZ = [
     a: [
       { t: 'Las hizo ver una película de terror.', s: 0 },
       { t: 'Se disfrazó de payaso y las despertó a las 3am.', s: 0 },
-      { t: 'Las hizo dormir solas en la casita del árbol.', s: 0 },
-      { t: 'Mandó al Tata al entretecho para asustarlas.', s: 1 },
+      { t: 'Las hizo dormir solas en la casita del árbol.', s: 1 },
+      { t: 'Mandó al Tata al entretecho para asustarlas.', s: 0 },
     ]
   },
 ];
