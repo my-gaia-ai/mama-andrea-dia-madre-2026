@@ -98,6 +98,7 @@ h1{
 }
 
 .photo{height:240px; border-radius:14px; border:1px dashed rgba(20,20,26,.18); background:linear-gradient(135deg, rgba(255,77,141,.08), rgba(106,92,255,.07)); display:flex; align-items:center; justify-content:center; overflow:hidden}
+.photo img{width:100%; height:100%; object-fit:cover; object-position:50% 38%; display:block}
 
 .ph-inner{ text-align:center; padding:18px }
 .ph-title{font-weight:800}
