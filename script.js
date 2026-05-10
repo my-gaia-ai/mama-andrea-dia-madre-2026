@@ -86,11 +86,12 @@ const QUIZ = [
     ]
   },
   {
-    q: 'Tu frase más probable al despedirte:',
+    q: '¿Qué hizo la Meme para asustar a las nietas, para que no fueran a una casa embrujada?',
     a: [
-      { t: '“Avísame cuando llegues.”', s: 2 },
-      { t: '“Que te vaya bien, te quiero.”', s: 1 },
-      { t: '“Y ojo con…” (lista de 3 cosas).', s: 2 },
+      { t: 'Las hizo ver una película de terror.', s: 0 },
+      { t: 'Se disfrazó de payaso y las despertó a las 3am.', s: 0 },
+      { t: 'Las hizo dormir solas en la casita del árbol.', s: 0 },
+      { t: 'Mandó al Tata al entretecho para asustarlas.', s: 2 },
     ]
   },
   {
