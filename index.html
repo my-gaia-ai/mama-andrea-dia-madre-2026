@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz Día, Mamá Andrea</title>
+  <meta name="description" content="Una mini web hecha con amor (y un poquito de humor) para la mejor mamá del mundo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="wrap header">
+    <div class="badge">Edición especial: <span id="todayLabel">Día de la Madre</span></div>
+    <nav class="nav">
+      <a href="#carta">Carta</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#historia">Mini historia</a>
+      <a href="#trivia">Trivia</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Portada">
+      <div class="hero-left">
+        <h1>
+          Mamá <span class="accent">Andrea Lorenzini</span>,
+          <br />
+          oficialmente declarada
+          <span class="stamp">la mejor mamá del mundo</span>
+        </h1>
+        <p class="sub">
+          Esta página fue aprobada por el comité internacional de hij@s
+          (Felipe, Andrea y Paz) tras una auditoría rigurosa: abrazos, paciencia y amor.
+        </p>
+
+        <div class="cta-row">
+          <button class="btn primary" id="btnBest">Confirmar veredicto: “Sí, soy la mejor”</button>
+          <button class="btn" id="btnHug">Modo abrazo</button>
+        </div>
+
+        <div class="mini-stats" role="status" aria-live="polite">
+          <div class="stat">
+            <div class="k" id="counter">0</div>
+            <div class="t">confirmaciones oficiales</div>
+          </div>
+          <div class="stat">
+            <div class="k" id="compliment">—</div>
+            <div class="t">cumplido aleatorio</div>
+          </div>
+        </div>
+
+        <div class="fineprint">
+          *Esta web contiene: ternura, memes suaves y evidencia fotográfica (próximamente).
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="Tarjeta">
+        <div class="card-top">
+          <div class="ribbon">MVP • rápido pero con cariño</div>
+          <div class="photo ph" id="heroPhoto" aria-label="Foto principal pendiente">
+            <div class="ph-inner">
+              <div class="ph-title">Foto principal</div>
+              <div class="ph-sub">(la agregamos en 2 minutos)</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <div class="quote" id="momQuote">“Inserte aquí una frase típica de mamá (nivel: legendario).”</div>
+          <div class="sig">— Tus hijos: Felipe, Andrea y Paz</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="carta" class="section">
+      <h2>Carta corta (pero contundente)</h2>
+      <div class="paper">
+        <p>Mamá,</p>
+        <p>
+          Hoy, <strong id="dateLong">10 de mayo de 2026</strong>, queríamos decirte algo simple y verdadero:
+          <strong>gracias por ser tú</strong>. Por tu amor constante, por tu forma de cuidarnos (incluso cuando nos hacemos los autosuficientes)
+          y por ese superpoder tuyo de convertir un día cualquiera en “ya, todo va a estar bien”.
+        </p>
+        <p>
+          Esta web es chiquitita, pero la intención es gigante: que te rías, que te emocione un poco,
+          y que te quede clarísimo que para nosotros eres <strong>la número 1</strong>.
+        </p>
+        <p class="ps">P.D.: El botón de “Modo abrazo” funciona sin internet. (Bueno, casi.)</p>
+        <p class="sign">Con amor, <strong>Felipe, Andrea y Paz</strong>.</p>
+      </div>
+    </section>
+
+    <section id="fotos" class="section">
+      <h2>Fotos (evidencia irrefutable)</h2>
+      <p class="muted">Dejé espacios listos. Cuando me mandes las fotos, las enchufamos en 60 segundos.</p>
+
+      <div class="grid" id="gallery">
+        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 1</div><div class="ph-sub">juntos</div></div></figure>
+        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 2</div><div class="ph-sub">ella sola</div></div></figure>
+        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 3</div><div class="ph-sub">familiar</div></div></figure>
+        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 4</div><div class="ph-sub">la graciosa</div></div></figure>
+      </div>
+
+      <details class="howto">
+        <summary>Cómo agregar las fotos (para nosotros, no para Mamá)</summary>
+        <ol>
+          <li>Guarda tus fotos en la carpeta <code>assets/</code> con nombres: <code>foto1.jpg</code>, <code>foto2.jpg</code>, <code>foto3.jpg</code>, <code>foto4.jpg</code>.</li>
+          <li>Abre <code>script.js</code> y revisa el arreglo <code>PHOTOS</code> (ya está listo).</li>
+        </ol>
+      </details>
+    </section>
+
+    <section id="historia" class="section">
+      <h2>Mini historia (versión teaser)</h2>
+      <div class="timeline" id="stories">
+        <div class="story">
+          <div class="dot"></div>
+          <div class="box">
+            <div class="title">Capítulo 1: El superpoder</div>
+            <div class="text">(Placeholder) Cuando Mamá dice “ya, tranquil@”, el universo baja 2 decibeles.</div>
+          </div>
+        </div>
+        <div class="story">
+          <div class="dot"></div>
+          <div class="box">
+            <div class="title">Capítulo 2: La logística imposible</div>
+            <div class="text">(Placeholder) Nadie sabe cómo, pero siempre aparece lo que faltaba. Siempre.</div>
+          </div>
+        </div>
+        <div class="story">
+          <div class="dot"></div>
+          <div class="box">
+            <div class="title">Capítulo 3: El chiste interno</div>
+            <div class="text">(Placeholder) Inserta aquí ese chiste que solo ustedes entienden y que igual da risa.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trivia" class="section">
+      <h2>Trivia express: “¿Qué tan Mamá Andrea eres?”</h2>
+      <p class="muted">Esto es cariñoso. Cualquier parecido con la realidad… es totalmente intencional.</p>
+
+      <div class="quiz" id="quiz"></div>
+      <div class="quiz-actions">
+        <button class="btn primary" id="btnQuiz">Ver resultado</button>
+        <button class="btn" id="btnReset">Reiniciar</button>
+      </div>
+      <div class="result" id="quizResult" aria-live="polite"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="small">Hecho con amor por tus hijos — y con un poquito de ayuda tecnológica.</div>
+      <div class="small">© <span id="year"></span> • “Mamá Andrea: Leyenda viva”</div>
+    </footer>
+  </main>
+
+  <!-- Modal: Modo Abrazo -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Modo abrazo">
+    <div class="modal-backdrop" id="modalClose"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title">Modo abrazo</div>
+        <button class="icon" id="xClose" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="hug">
+          <div class="hug-title">Abrazo enviado ✅</div>
+          <div class="hug-text">Siéntelo ahora mismo. No preguntes cómo funciona. Confía en la ciencia.</div>
+        </div>
+        <div class="hug-actions">
+          <button class="btn primary" id="btnMore">Otro abrazo</button>
+          <button class="btn" id="btnCompliment">Dame otro cumplido</button>
+        </div>
+        <div class="hearts" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
