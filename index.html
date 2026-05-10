@@ -61,10 +61,10 @@
       <div class="hero-card" aria-label="Tarjeta">
         <div class="card-top">
           <div class="ribbon">MVP • rápido pero con cariño</div>
-          <div class="photo ph" id="heroPhoto" aria-label="Foto principal pendiente">
+          <div class="photo ph" id="heroPhoto" aria-label="Foto principal">
             <div class="ph-inner">
-              <div class="ph-title">Foto principal</div>
-              <div class="ph-sub">(la agregamos en 2 minutos)</div>
+              <div class="ph-title">Cargando foto…</div>
+              <div class="ph-sub">(si ves esto, recarga la página)</div>
             </div>
           </div>
         </div>
@@ -95,20 +95,15 @@
 
     <section id="fotos" class="section">
       <h2>Fotos (evidencia irrefutable)</h2>
-      <p class="muted">Dejé espacios listos. Cuando me mandes las fotos, las enchufamos en 60 segundos.</p>
+      <p class="muted">Selección curada por tus hijos (y un algoritmo con buen gusto 😄).</p>
 
-      <div class="grid" id="gallery">
-        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 1</div><div class="ph-sub">juntos</div></div></figure>
-        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 2</div><div class="ph-sub">ella sola</div></div></figure>
-        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 3</div><div class="ph-sub">familiar</div></div></figure>
-        <figure class="tile ph"><div class="ph-inner"><div class="ph-title">Foto 4</div><div class="ph-sub">la graciosa</div></div></figure>
-      </div>
+      <div class="grid" id="gallery" aria-label="Galería de fotos"></div>
 
       <details class="howto">
         <summary>Cómo agregar las fotos (para nosotros, no para Mamá)</summary>
         <ol>
-          <li>Guarda tus fotos en la carpeta <code>assets/</code> con nombres: <code>foto1.jpg</code>, <code>foto2.jpg</code>, <code>foto3.jpg</code>, <code>foto4.jpg</code>.</li>
-          <li>Abre <code>script.js</code> y revisa el arreglo <code>PHOTOS</code> (ya está listo).</li>
+          <li>Las fotos viven en <code>assets/</code>.</li>
+          <li>Abre <code>script.js</code> y edita <code>HERO_PHOTO</code> y <code>GALLERY_PHOTOS</code>.</li>
         </ol>
       </details>
     </section>
