@@ -2,7 +2,7 @@
 
 // Config de fotos (edita libremente)
 const HERO_PHOTO = {
-  src: 'assets/foto19.jpg',
+  src: 'assets/hero.jpg',
   alt: 'Mamá Andrea',
 };
 
