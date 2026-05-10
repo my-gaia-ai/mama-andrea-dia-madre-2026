@@ -65,11 +65,12 @@ const QUIZ = [
     ]
   },
   {
-    q: 'Cuando tu hijo/a dice “estoy bien, tranqui”…',
+    q: '¿Cuál es su animal favorito?',
     a: [
-      { t: 'Tu radar detecta mentira piadosa de inmediato.', s: 2 },
-      { t: 'Respondes “ya, pero cuéntame igual”.', s: 2 },
-      { t: 'Le mandas un audio de 2 min con amor y orden.', s: 1 },
+      { t: 'Perro.', s: 0 },
+      { t: 'Gato.', s: 0 },
+      { t: 'Caballo.', s: 0 },
+      { t: 'Nietos.', s: 2 },
     ]
   },
   {
