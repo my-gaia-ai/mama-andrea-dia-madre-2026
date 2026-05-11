@@ -7,18 +7,72 @@ const HERO_PHOTO = {
 };
 
 const GALLERY_PHOTOS = [
-  { src: 'assets/foto18.jpg', alt: 'Mamá Andrea', caption: 'Brazos que arreglan el mundo.' },
-  { src: 'assets/foto06.jpg', alt: 'Mamá Andrea', caption: 'Tu sonrisa: terapia familiar.' },
-  { src: 'assets/foto11.jpg', alt: 'Mamá Andrea', caption: 'Reina del caos (con amor).' },
-  { src: 'assets/foto15.jpg', alt: 'Mamá Andrea', caption: 'Tres generaciones, un mismo abrazo.' },
-  { src: 'assets/foto23.jpg', alt: 'Familia', caption: 'Equipo completo, capitana: Mamá.' },
+  { src: 'assets/foto18.jpg', alt: 'Mamá', caption: 'Brazos que siempre vuelven a ser hogar.' },
+  { src: 'assets/foto06.jpg', alt: 'Mamá', caption: 'Tu sonrisa nos calma.' },
+  { src: 'assets/foto11.jpg', alt: 'Mamá', caption: 'Tu amor sostiene todo.' },
+  { src: 'assets/foto15.jpg', alt: 'Familia', caption: 'Tres generaciones, un mismo amor.' },
+  { src: 'assets/foto23.jpg', alt: 'Familia', caption: 'Familia completa, gracias a ti.' },
   { src: 'assets/foto21.jpg', alt: 'Familia', caption: 'Abrazo que reinicia el corazón.' },
   { src: 'assets/foto22.jpg', alt: 'Familia', caption: 'Siempre en primera fila por nosotros.' },
-  { src: 'assets/foto25.jpg', alt: 'Familia', caption: 'Mamá también sabe pasarlo bien.' },
-  { src: 'assets/foto04.jpg', alt: 'Mamá Andrea', caption: 'Elegancia + ternura = tú.' },
-  { src: 'assets/foto08.jpg', alt: 'Mamá Andrea', caption: 'Clásico: Andrea siendo Andrea.' },
-  { src: 'assets/foto05.jpg', alt: 'Mamá Andrea', caption: 'Sonrisa lista para cualquier plan.' },
+  { src: 'assets/foto25.jpg', alt: 'Familia', caption: 'Tu risa también es nuestro hogar.' },
+  { src: 'assets/foto04.jpg', alt: 'Mamá', caption: 'Ternura que se nota en todo.' },
+  { src: 'assets/foto08.jpg', alt: 'Mamá', caption: 'Mamá, siempre tú.' },
+  { src: 'assets/foto05.jpg', alt: 'Mamá', caption: 'Una sonrisa que nos cuida.' },
   { src: 'assets/foto01.jpg', alt: 'Familia', caption: 'Celebrar contigo es el mejor plan.' },
+  { src: 'assets/foto26.jpg', alt: 'Familia' },
+  { src: 'assets/foto27.jpg', alt: 'Familia' },
+  { src: 'assets/foto28.jpg', alt: 'Familia' },
+  { src: 'assets/foto29.jpg', alt: 'Familia' },
+  { src: 'assets/foto30.jpg', alt: 'Familia' },
+  { src: 'assets/foto31.jpg', alt: 'Familia' },
+  { src: 'assets/foto32.jpg', alt: 'Familia' },
+  { src: 'assets/foto33.jpg', alt: 'Familia' },
+  { src: 'assets/foto34.jpg', alt: 'Familia' },
+  { src: 'assets/foto35.jpg', alt: 'Familia' },
+  { src: 'assets/foto36.jpg', alt: 'Familia' },
+  { src: 'assets/foto37.jpg', alt: 'Familia' },
+  { src: 'assets/foto38.jpg', alt: 'Familia' },
+  { src: 'assets/foto39.jpg', alt: 'Familia' },
+  { src: 'assets/foto40.jpg', alt: 'Familia' },
+  { src: 'assets/foto41.jpg', alt: 'Familia' },
+  { src: 'assets/foto42.jpg', alt: 'Familia' },
+  { src: 'assets/foto43.jpg', alt: 'Familia' },
+  { src: 'assets/foto44.jpg', alt: 'Familia' },
+  { src: 'assets/foto45.jpg', alt: 'Familia' },
+  { src: 'assets/foto46.jpg', alt: 'Familia' },
+  { src: 'assets/foto47.jpg', alt: 'Familia' },
+  { src: 'assets/foto48.jpg', alt: 'Familia' },
+  { src: 'assets/foto49.jpg', alt: 'Familia' },
+  { src: 'assets/foto50.jpg', alt: 'Familia' },
+  { src: 'assets/foto51.jpg', alt: 'Familia' },
+  { src: 'assets/foto52.jpg', alt: 'Familia' },
+  { src: 'assets/foto53.jpg', alt: 'Familia' },
+  { src: 'assets/foto54.jpg', alt: 'Familia' },
+  { src: 'assets/foto55.jpg', alt: 'Familia' },
+  { src: 'assets/foto56.jpg', alt: 'Familia' },
+  { src: 'assets/foto57.jpg', alt: 'Familia' },
+  { src: 'assets/foto58.jpg', alt: 'Familia' },
+  { src: 'assets/foto59.jpg', alt: 'Familia' },
+  { src: 'assets/foto60.jpg', alt: 'Familia' },
+  { src: 'assets/foto61.jpg', alt: 'Familia' },
+  { src: 'assets/foto62.jpg', alt: 'Familia' },
+  { src: 'assets/foto63.jpg', alt: 'Familia' },
+  { src: 'assets/foto64.jpg', alt: 'Familia' },
+  { src: 'assets/foto65.jpg', alt: 'Familia' },
+  { src: 'assets/foto66.jpg', alt: 'Familia' },
+];
+
+const DEFAULT_CAPTIONS = [
+  'Mamá, gracias por ser hogar.',
+  'Memé, tu amor se multiplica.',
+  'Donde estás tú, todo se calma.',
+  'Tu abrazo nos vuelve a ordenar por dentro.',
+  'Gracias por cuidarnos como nadie.',
+  'Tu amor sostiene esta familia.',
+  'Mamá, eres nuestra raíz.',
+  'Memé, eres el lugar seguro.',
+  'Lo mejor de la vida: esto, contigo.',
+  'Tu risa nos queda para siempre.',
 ];
 
 const COMPLIMENTS = [
@@ -245,7 +299,7 @@ function applyPhotos(){
       fig.className = 'tile';
       fig.innerHTML = `
         <img loading="lazy" src="${p.src}" alt="${p.alt||''}" />
-        <figcaption><strong>Foto ${idx+1}.</strong> ${p.caption||''}</figcaption>
+        <figcaption><strong>Foto ${idx+1}.</strong> ${p.caption != null ? p.caption : DEFAULT_CAPTIONS[idx % DEFAULT_CAPTIONS.length]}</figcaption>
       `.trim();
       g.appendChild(fig);
     });
